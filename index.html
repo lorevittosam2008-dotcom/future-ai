@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Future AI</title>
+
+<style>
+  body {
+    margin: 0;
+    background-color: #000014;
+    color: #00ffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  h1 { margin: 30px 0; font-size: 3rem; }
+  .menu { margin: 10px 0 30px 0; font-weight: 700; font-size: 1.2rem; }
+  .menu a { color: #00ffff; text-decoration: none; margin: 0 12px; cursor: pointer; transition: color 0.3s; }
+  .menu a:hover { color: #66ffff; text-decoration: underline; }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+  }
+
+  .card {
+    background: #001a1a;
+    border-radius: 15px;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 0 15px #00ffff33;
+    transition: transform 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card:hover { transform: scale(1.05); }
+  .card h2 { margin-bottom: 10px; }
+  .card img { width: 100%; border-radius: 10px; filter: drop-shadow(0 0 8px #00ffff); margin-bottom: 10px; }
+
+  .page { display: none; padding: 20px; color: #00ffff; text-align: center; }
+  .page img.big-image { width: 80%; max-width: 800px; border-radius: 15px; margin-bottom: 20px; filter: drop-shadow(0 0 15px #00ffff); }
+  .back-button { color: #00ffff; cursor: pointer; text-decoration: underline; margin-top: 20px; display: inline-block; }
+
+  .page ol, .page ul { list-style-position: inside; padding-left: 0; max-width: 600px; margin: 0 auto 20px auto; text-align: left; }
+
+  footer { margin-top: 40px; font-size: 0.8rem; color: #00ffff99; }
+  footer a { color: #00ffff; text-decoration: underline; cursor: pointer; }
+
+  @media (max-width: 800px) {
+    .container { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<h1>Future AI</h1>
+
+<nav class="menu">
+  <a href="#" onclick="showPage('homePage')">Home</a> |
+  <a href="#" onclick="showPage('contattiPage')">Contatti</a> |
+  <a href="#" onclick="showPage('cosèPage')">Cos'è</a>
+</nav>
+
+<div class="container" id="mainContainer">
+  <div class="card" onclick="showPage('mlPage')">
+    <h2>🧠 Machine Learning</h2>
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="Machine Learning">
+  </div>
+  <div class="card" onclick="showPage('robotPage')">
+    <h2>🤖 Robotica</h2>
+    <img src="https://images.unsplash.com/photo-1581091870627-3b5c0d7c5c5b" alt="Robotica">
+  </div>
+  <div class="card" onclick="showPage('chatPage')">
+    <h2>💬 AI Conversazionale</h2>
+    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7" alt="AI Conversazionale">
+  </div>
+  <div class="card" onclick="showPage('genaiPage')">
+    <h2>🎨 Generative AI</h2>
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4436c6" alt="Generative AI">
+  </div>
+  <div class="card" onclick="showPage('schoolPage')">
+    <h2>🏫 ITIS Pininfarina</h2>
+    <img src="https://images.unsplash.com/photo-1560185127-6f11a7388c31" alt="ITIS Pininfarina">
+  </div>
+</div>
+
+<!-- Pagine interne -->
+<div class="page" id="homePage">
+  <h2>🏠 Home</h2>
+  <p>Benvenuto in <strong>Future AI</strong>. Esplora le principali categorie di Intelligenza Artificiale e scopri come stanno cambiando il mondo.</p>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<div class="page" id="contattiPage">
+  <h2>📧 Contatti</h2>
+  <p>Scrivi a: <strong>sammarco.lorenzo22@studentipinin.it</strong></p>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<div class="page" id="cosèPage">
+  <h2>💡 Cos'è l'AI</h2>
+  <p>L'<strong>Intelligenza Artificiale (AI)</strong> permette ai computer di imparare dai dati, riconoscere schemi, prendere decisioni e interagire con il mondo.</p>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- Machine Learning -->
+<div class="page" id="mlPage">
+  <h2>🧠 Machine Learning</h2>
+  <img class="big-image" src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="Machine Learning Grande">
+  <p>Il <strong>Machine Learning</strong> è un ramo dell'AI che permette ai computer di <strong>imparare dai dati</strong> senza essere programmati esplicitamente per ogni compito.</p>
+  <h3>Come funziona:</h3>
+  <ol>
+    <li>Raccolta dati (immagini, testi, numeri, audio)</li>
+    <li>Addestramento del modello matematico</li>
+    <li>Predizione o classificazione</li>
+    <li>Miglioramento continuo</li>
+  </ol>
+  <h3>Esempi:</h3>
+  <ul>
+    <li>Raccomandazioni su Netflix/Spotify</li>
+    <li>Riconoscimento vocale come Siri/Alexa</li>
+    <li>Traduttori automatici</li>
+    <li>Rilevamento frodi bancarie</li>
+  </ul>
+  <h3>Tipi:</h3>
+  <ul>
+    <li>Supervisionato (dati etichettati)</li>
+    <li>Non supervisionato (schemi senza etichette)</li>
+    <li>Reinforcement Learning (apprendimento per tentativi)</li>
+  </ul>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- Robotica -->
+<div class="page" id="robotPage">
+  <h2>🤖 Robotica</h2>
+  <img class="big-image" src="https://images.unsplash.com/photo-1581091870627-3b5c0d7c5c5b" alt="Robotica Grande">
+  <p>La <strong>Robotica</strong> combina AI e meccanica per creare robot capaci di compiti autonomi.</p>
+  <h3>Come funziona:</h3>
+  <ol>
+    <li>Sensori raccolgono informazioni dall'ambiente</li>
+    <li>AI elabora i dati e decide le azioni</li>
+    <li>Attuatori eseguono le azioni</li>
+    <li>Apprendimento continuo per migliorare</li>
+  </ol>
+  <h3>Esempi:</h3>
+  <ul>
+    <li>Robot industriali in fabbriche</li>
+    <li>Robot chirurgici in ospedali</li>
+    <li>Robot domestici come aspirapolvere smart</li>
+  </ul>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- AI Conversazionale -->
+<div class="page" id="chatPage">
+  <h2>💬 AI Conversazionale</h2>
+  <img class="big-image" src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7" alt="AI Conversazionale Grande">
+  <p>I <strong>Bot Conversazionali</strong> comprendono e rispondono al linguaggio umano.</p>
+  <h3>Come funziona:</h3>
+  <ol>
+    <li>Input utente (testo/voce)</li>
+    <li>Analisi del contesto tramite modelli di linguaggio</li>
+    <li>Generazione della risposta più adatta</li>
+    <li>Apprendimento continuo dalle conversazioni</li>
+  </ol>
+  <h3>Esempi:</h3>
+  <ul>
+    <li>Assistenti virtuali (ChatGPT, Alexa, Siri)</li>
+    <li>Supporto clienti automatico</li>
+    <li>Generazione testi e traduzioni</li>
+    <li>Raccomandazioni personalizzate</li>
+  </ul>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- Generative AI -->
+<div class="page" id="genaiPage">
+  <h2>🎨 Generative AI</h2>
+  <img class="big-image" src="https://images.unsplash.com/photo-1605902711622-cfb43c4436c6" alt="Generative AI Grande">
+  <p>La <strong>Generative AI</strong> crea nuovi contenuti da dati di esempio.</p>
+  <h3>Come funziona:</h3>
+  <ol>
+    <li>Analisi dei dati di input</li>
+    <li>Modelli generativi producono contenuti nuovi</li>
+    <li>Apprendimento continuo dai risultati</li>
+  </ol>
+  <h3>Esempi:</h3>
+  <ul>
+    <li>Creazione di immagini artistiche</li>
+    <li>Generazione di musica e testi</li>
+    <li>Marketing e pubblicità</li>
+    <li>Intrattenimento digitale</li>
+  </ul>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- ITIS Pininfarina -->
+<div class="page" id="schoolPage">
+  <h2>🏫 ITIS Pininfarina</h2>
+  <img class="big-image" src="https://images.unsplash.com/photo-1560185127-6f11a7388c31" alt="ITIS Pininfarina Grande">
+  <p>L'<strong>ITIS Pininfarina</strong> è un istituto tecnico industriale che forma studenti nelle discipline tecnologiche e scientifiche, preparando professionisti competenti nel mondo dell’innovazione e della tecnologia.</p>
+  <h3>Materie principali:</h3>
+  <ul>
+    <li>Matematica e Fisica</li>
+    <li>Informatica e Programmazione</li>
+    <li>Elettronica e Meccanica</li>
+    <li>Disegno tecnico e CAD</li>
+    <li>Laboratori pratici e progetti tecnologici</li>
+  </ul>
+  <h3>Come funziona:</h3>
+  <ol>
+    <li>Lezioni teoriche in aula per acquisire basi scientifiche e tecniche</li>
+    <li>Laboratori pratici per applicare le conoscenze</li>
+    <li>Progetti e stage per esperienza sul campo</li>
+    <li>Valutazioni continue tramite verifiche, progetti e lavori di gruppo</li>
+  </ol>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<!-- Chi sono -->
+<div class="page" id="aboutPage">
+  <h2>🙋‍♂️ Chi sono e cosa faccio</h2>
+  <p>Sono Lorenzo Sammarco, studente appassionato di AI. Creo progetti didattici per spiegare concetti complessi come Machine Learning e Robotica.</p>
+  <span class="back-button" onclick="showMain()">← Torna alla griglia</span>
+</div>
+
+<footer>
+  <a href="#" onclick="showPage('aboutPage')">Chi sono e cosa faccio</a>
+</footer>
+
+<script>
+function showPage(pageId) {
+  document.getElementById('mainContainer').style.display = 'none';
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.style.display = 'none');
+  document.getElementById(pageId).style.display = 'block';
+}
+function showMain() {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.style.display = 'none');
+  document.getElementById('mainContainer').style.display = 'grid';
+}
+</script>
+
+</body>
+</html>
